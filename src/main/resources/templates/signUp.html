@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-veternary</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header class="header">
+
+    <a href="#" class="logo"> <i class="fas fa-paw"></i> shop </a>
+
+    <nav class="navbar">
+        <a href="#home">home</a>
+        <a href="#about">about</a>
+<!--        <a href="/shop">shop</a>-->
+        <!-- <a href="#services">Get Appointment</a>
+        <a href="#plan">pet vaccination</a> -->
+        <a href="#contact">contact</a>
+    </nav>
+
+    <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <a href="#" class="fas fa-shopping-cart"></a>
+        <div class="fas fa-user" id="login-btn"></div>
+    </div>
+
+    <form method="post" action="/register" th:object="${registerRequest}" class="login-form">
+        <h3>sign Up</h3>
+        <input type="email" name="email" placeholder="enter your email" id="email" class="box">
+        <input type="password" name="password" placeholder="enter your password" id="password" class="box">
+        <input type="submit" value="sign in" class="btn">
+        <div class="links">
+            <a href="/login">Already have an account</a>
+            <a href="/login">sign in</a>
+        </div>
+    </form>
+
+</header>
+
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <div class="content">
+        <h3> <span>hi</span> welcome to our E-veternary </h3>
+        <a href="" class="btn">Book Appointment for your pet by Registering</a>
+    </div>
+
+    <img src="image/bottom_wave.png" class="wave" alt="">
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
+
+<section class="about" id="about">
+
+    <div class="image">
+        <img src="image/doc2.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>Our <span>pet </span> purpose</h3>
+        <p>Being a pet owner is about so much more than just opening your home to an animal. It’s about boisterous greetings and snuggles on the couch after a long day. It’s about chin scratches and belly rubs, treats and toys. Most of all, it’s about sharing your heart and learning what unconditional love and unwavering loyalty truly feel like.</p>
+        <a href="#about" class="btn">read more</a>
+    </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- dog and cat food banner section starts -->
+
+<div class="dog-food">
+
+    <div class="image">
+        <img src="image/dog_food.png" alt="">
+    </div>
+
+    <div class="content">
+        <h3> <span>E-Veternary</span> dog food </h3>
+        <p>While meat makes up the majority of their diet, domestic dogs can also derive nutrients from grains, fruits, and vegetables. These non-meat foods are not simply fillers, but can be a valuable source of essential vitamins, minerals, and fiber. A good dog food will contain meat, vegetables, grains, and fruits.</p>
+        <div class="amount">$15.00 - $30.00</div>
+        <a href="/shop"> <img src="image/shop_now_dog.png" alt=""> </a>
+    </div>
+
+</div>
+
+<div class="cat-food">
+
+    <div class="content">
+        <h3> <span>E-Veternary</span> cat food </h3>
+        <p>Cats are able to eat a range of vegetables, providing they are introduced slowly and fed in moderation. It is essential to make sure these vegetables do not have added flavourings, seasonings or any other additions such as fats or sodium that can be harmful.</p>
+        <div class="amount">$15.00 - $30.00</div>
+        <a href="/shop"> <img src="image/shop_now_cat.png" alt=""> </a>
+    </div>
+
+    <div class="image">
+        <img src="image/cat_food.png" alt="">
+    </div>
+
+</div>
+
+
+
+<!-- shop section ends -->
+
+<!-- services section starts  -->
+
+
+
+<!-- services section ends -->
+
+<!-- plan section starts  -->
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+</body>
+</html>
