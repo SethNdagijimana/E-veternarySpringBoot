@@ -4,6 +4,7 @@ import com.project.model.UserAppointmentModel;
 import com.project.repository.AppointmentRepository;
 import com.project.service.implementation.AppointmentImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -36,7 +37,7 @@ public class AppointmentController {
         List<UserAppointmentModel> ListOfAppointment = appService.appointmentList();
         model.addAttribute("ListOfAppointment", ListOfAppointment);
 
-        return "Display";
+        return findPage(1, model);
     }
 
     @PostMapping("/registerAppointment")
@@ -60,6 +61,24 @@ public class AppointmentController {
     public String deleteAppointment(@PathVariable("id") Integer id){
         appointmentRepository.deleteById(id);
         return "redirect:/appointments";
+    }
+
+    @GetMapping("/page/{pageNo}")
+    public String findPage(@PathVariable(value = "pageNo") int pageNo, Model model){
+
+        int pageSize = 3;
+
+        Page<UserAppointmentModel> page = appService.findPage(pageNo,pageSize);
+        List<UserAppointmentModel> listApp = page.getContent();
+        List<UserAppointmentModel> ListOfAppointment = appService.appointmentList();
+
+        model.addAttribute("listOfAppointment", ListOfAppointment);
+        model.addAttribute("currentPage", pageNo);
+        model.addAttribute("totalPages", page.getTotalPages());
+        model.addAttribute("totalElements", page.getTotalElements());
+        model.addAttribute("listApps", listApp);
+
+        return "Display";
     }
 
 }

@@ -4,6 +4,9 @@ import com.project.model.UserAppointmentModel;
 import com.project.repository.AppointmentRepository;
 import com.project.service.AppointmentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -48,5 +51,12 @@ public class AppointmentImplementation implements AppointmentService {
     @Override
     public UserAppointmentModel findAppointmentById(UserAppointmentModel appointment) {
         return appointmentRepo.findById(appointment.getId()).get();
+    }
+
+    @Override
+    public Page<UserAppointmentModel> findPage(int pageNo, int pageSize) {
+        Pageable pageable = PageRequest.of(pageNo -1, pageSize);
+
+        return this.appointmentRepo.findAll(pageable);
     }
 }
