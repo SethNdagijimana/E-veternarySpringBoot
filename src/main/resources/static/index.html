@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,7 +36,7 @@
         <div class="fas fa-user" id="login-btn"></div>
     </div>
 
-    <form action="" class="login-form">
+    <form method="post" action="/login" th:object="${loginRequest}"" class="login-form">
         <h3>sign in</h3>
         <input type="email" name="email" placeholder="enter your email" id="email" class="box">
         <input type="password" name="password" placeholder="enter your password" id="pass" class="box">

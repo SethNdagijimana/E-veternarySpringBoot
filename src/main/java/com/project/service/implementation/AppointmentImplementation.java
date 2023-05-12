@@ -44,7 +44,10 @@ public class AppointmentImplementation implements AppointmentService {
     }
 
     @Override
-    public List<UserAppointmentModel> appointmentList() {
+    public List<UserAppointmentModel> appointmentList(String keyword) {
+        if(keyword != null){
+            return appointmentRepo.search(keyword);
+        }
         return appointmentRepo.findAll();
     }
 

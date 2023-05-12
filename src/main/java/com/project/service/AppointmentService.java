@@ -10,7 +10,7 @@ public interface AppointmentService {
     UserAppointmentModel registerAppointment (UserAppointmentModel appointment);
     UserAppointmentModel updateAppointment( UserAppointmentModel appointment);
     void deleteAppointmentById (UserAppointmentModel appointment);
-    List<UserAppointmentModel> appointmentList();
+    List<UserAppointmentModel> appointmentList(String keyword);
     UserAppointmentModel findAppointmentById(UserAppointmentModel appointment);
 
     Page<UserAppointmentModel> findPage(int pageNo, int pageSize);
