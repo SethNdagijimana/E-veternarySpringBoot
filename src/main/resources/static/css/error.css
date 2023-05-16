@@ -3,7 +3,8 @@
   }
 
   body {
-	background-color: #0a0b3b;
+			background-image: url(../image/dog4.jpg);
+        	  background-repeat: no repeat;
 	color: #fff;
 	font-family: sans-serif;
 }

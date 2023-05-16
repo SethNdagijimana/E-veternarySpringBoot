@@ -6,6 +6,7 @@ import com.project.service.implementation.AppointmentImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.repository.query.Param;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +35,7 @@ public class AppointmentController {
     }
 
     @GetMapping("/appointments")
+//    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public String appointmentList(Model model, @Param("keyword") String keyword){
 
         List<UserAppointmentModel> ListOfAppointment = appService.appointmentList(keyword);
